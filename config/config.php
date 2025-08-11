@@ -2,7 +2,7 @@
 // Basic configuration with environment overrides
 return [
     'site_name' => getenv('SITE_NAME') ?: 'SMM Premium',
-    'base_url' => rtrim(getenv('BASE_URL') ?: '/', '/'),
+    'base_url' => rtrim(getenv('https://giftcardbn.shop/') ?: '/', '/'),
 
     'db' => [
         'host' => getenv('DB_HOST') ?: 'localhost',

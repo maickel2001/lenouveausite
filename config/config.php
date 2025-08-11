@@ -1,0 +1,30 @@
+<?php
+// Basic configuration with environment overrides
+return [
+    'site_name' => getenv('SITE_NAME') ?: 'SMM Premium',
+    'base_url' => rtrim(getenv('BASE_URL') ?: '/', '/'),
+
+    'db' => [
+        'host' => getenv('DB_HOST') ?: 'localhost',
+        'name' => getenv('DB_NAME') ?: 'smm_app',
+        'user' => getenv('DB_USER') ?: 'root',
+        'pass' => getenv('DB_PASS') ?: '',
+        'charset' => 'utf8mb4',
+    ],
+
+    'mail' => [
+        'from' => getenv('MAIL_FROM') ?: 'no-reply@example.com',
+        'bcc' => getenv('MAIL_BCC') ?: '',
+        'return_path' => getenv('MAIL_RETURN_PATH') ?: '',
+    ],
+
+    'theme' => [
+        'primary_color' => getenv('PRIMARY_COLOR') ?: '#ff7a00',
+        'dark_background' => '#0f0f10',
+        'dark_surface' => '#151517',
+        'light_text' => '#f5f5f7',
+        'muted_text' => '#b3b3b3',
+    ],
+
+    'maintenance' => filter_var(getenv('MAINTENANCE_MODE') ?: 'false', FILTER_VALIDATE_BOOLEAN),
+];

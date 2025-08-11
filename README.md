@@ -18,5 +18,11 @@ Set environment variables in your hosting panel:
 ## Deploy
 - Point web root to `public/`
 - Ensure `storage/` and `logs/` are writable
-- Import `database/schema.sql`
+- Import `database/schema.sql` or run the migration script below
+
+## Migrate & Seed (CLI)
+- Migrate schema:
+  - `php database/migrate.php`
+- Seed default admin (uses env `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `ADMIN_NAME` or defaults):
+  - `php database/seed_admin.php`
 

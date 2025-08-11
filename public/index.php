@@ -1,29 +1,11 @@
 <?php
 use App\Core\Router;
 use App\Core\View;
-use App\Helpers\Session;
 use App\Helpers\Auth;
 
-// Autoloader
-spl_autoload_register(function ($class) {
-    $prefix = 'App\\';
-    $base_dir = dirname(__DIR__) . '/app/';
-    $len = strlen($prefix);
-    if (strncmp($prefix, $class, $len) !== 0) {
-        return;
-    }
-    $relative_class = substr($class, $len);
-    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
-    if (file_exists($file)) {
-        require $file;
-    }
-});
-
-// Load config
-$config = require dirname(__DIR__) . '/config/config.php';
-
-// Start session
-Session::start();
+// Bootstrap (autoloader + config + session for web)
+$app = require dirname(__DIR__) . '/bootstrap.php';
+$config = $app['config'];
 
 // Maintenance mode (except for admins)
 $uri = $_SERVER['REQUEST_URI'] ?? '/';

@@ -6,9 +6,9 @@ return [
 
     'db' => [
         'host' => getenv('DB_HOST') ?: 'localhost',
-        'name' => getenv('DB_NAME') ?: 'smm_app',
-        'user' => getenv('DB_USER') ?: 'root',
-        'pass' => getenv('DB_PASS') ?: '',
+        'name' => getenv('DB_NAME') ?: 'u634930929_Ino',
+        'user' => getenv('DB_USER') ?: 'u634930929_Ino',
+        'pass' => getenv('DB_PASS') ?: 'Ino1234@',
         'charset' => 'utf8mb4',
     ],
 

@@ -31,6 +31,7 @@
   </header>
 
   <?php App\Core\View::partial('partials/banner'); ?>
+  <?php App\Core\View::partial('partials/flash'); ?>
 
   <main class="container p-16">
     <div class="card">
